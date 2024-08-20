@@ -5,7 +5,551 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://clipground.com/images/rounded-square-png-2.png">
     <title>Beats</title>
-    <link rel="stylesheet" href="style.css">
+    <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.664); 
+  }
+
+.nav{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   padding-top: 20px; 
+}
+
+.logo{
+  display: flex;
+  flex-direction: row;
+}
+
+.logo img{
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.logo h2{
+  width: 800px;
+  float: left;
+  font-size: 35px;
+}
+
+.list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.nav_button {
+  width: 500px;
+}
+
+.list a:hover{
+  transition: width 5s ease;
+  z-index: 1;
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-offset:initial;
+}
+
+.list li a{
+  width: auto;
+}
+
+ a {
+  text-decoration: none;
+  color: #555;
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+  padding-top: 20px;
+}
+
+.right h3{
+  display: flex;
+  float: left;
+  padding-top: 30px;
+} 
+
+.about{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-basis: 50%;
+    min-width: 300px;
+    height: 600px;
+}
+
+.list a{
+    color: white;
+    font-size: 17px;
+}
+
+.left_about{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  padding-bottom: 10px;
+}
+
+.left_about p{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  height: 220px;
+  width: 500px;
+  text-align: left;
+  margin-top: 5px;
+  font-size: 35px;
+}
+
+.left_about button{
+  height: 45px;
+  width: 80px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(228, 35, 206);
+}
+
+.left_about button:hover{
+  background-color: rgb(147, 4, 130);
+  height:50px;
+  width: 90px;
+}
+
+.right_about img {
+  max-width: 100%;
+  padding: 50px 0;
+  height: 500px;
+  width: 500px;
+}
+
+.about h1 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 60px;
+  margin: 25px 0; 
+  font-weight: bolder;
+  font-size: 70px;
+}
+
+section #intro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  height: 300px;
+  width: 1250px;
+  margin: 70px;
+  margin-left: 130px;
+  padding: 5px 40px 5px 40px;
+  background-color: rgba(0, 0, 0, 0.466);
+  border-radius: 20px;
+}
+
+.images{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.container{
+  transition: transform 0.5s;
+}
+
+.container:hover{
+  transform: translateY(-10px);
+}
+
+.services h1{
+  margin-left: 100px;
+  font-size: 40px;
+}
+
+.services img{
+  margin-top: 20px;
+  height: 390px;
+  width: 350px;
+  border-radius: 20px;
+}
+
+.services button{
+  height: 45px;
+  width: 80px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(228, 35, 206);
+  margin-top: 100px;
+}
+
+.services button:hover{
+  background-color: rgb(147, 4, 130);
+  height:50px;
+  width: 90px;
+}
+
+
+.images h2{
+  font-size: 30px;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.626);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.images p{
+  font-size: 25px;
+  height: 50px;
+  width: 350px;
+  margin-top: 20px;
+}
+
+.media-scroller{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 25%;
+  margin-top: 200px;
+  margin-left: 60px;
+  margin-right: 60px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.media-element img{
+  display: grid;
+  gap: var(--size-2);
+  padding: var(--size-3);
+  border-radius: 20px;
+  height: 400px;
+  width: 100px;
+
+}
+
+.media-element > img{
+  inline-size: 90%;
+}
+
+.feedback{
+  background-color: rgba(0, 0, 0, 0.522);
+  border-radius: 20px;
+  margin: 100px 50px 30px 50px;
+  padding-top: 30px;
+  height: 500px;
+}
+
+.feedback img.girl{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-left: 80px;
+}
+
+.feedback h3{
+  font-size: 30px;
+  margin: 50px 80px 50px 80px;
+  height: 150px;
+  width: 1000px;
+  text-align: center;
+}
+
+.feedback h2{
+  text-align: right;
+  margin-top: 50px;
+  margin-right: 50px;
+}
+
+.feedback .rating{
+  height: 35px;
+  width: 80px;
+  border-radius: 15px;
+}
+
+.section-headings {
+  font-size: 2.3rem;
+  margin-left: 70px;
+  text-underline-offset: 10px;
+  margin: 3rem 0 2.5rem;
+}
+
+#music{
+  margin: 40px;
+  margin-top: 100px;
+}
+
+.container h2{
+  color: color;
+  text-decoration: underline;
+}
+
+.container,
+#podcasts > .collection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#podcasts{
+  margin: 40px;
+  margin-top: 100px;
+}
+
+.playlist {
+  background-color: #2b2c28;
+  padding: 0.75em;
+  border-radius: 1em;
+  margin: 0.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap:70px;
+  margin: 2rem;
+}
+.card {
+  background-color: #2b2c28;
+  margin-bottom: .5rem;
+  display: grid;
+  grid-template-rows: min-content 180px 1fr;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%,10%);
+  width: 100%;
+  height: 350px;
+  background: #000;
+}
+.card #rew{
+  height:350px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border:1px solid #ca5e6b;
+}
+.card .image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.card .image img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 100%;
+  height: 350px;
+  transition: .5s;
+}
+.card:hover .image img {
+  opacity: .5;
+  transform: translateX(30%);
+}
+.card .details {
+  position: absolute;
+  display: flex;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: #ffc107;
+  transition: .5s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+}
+.card:hover .details {
+  transform: perspective(2000px) rotateY(0deg);
+}
+.card .details .center {
+  width:90%;
+  align-items: center;
+  backdrop-filter: blur(15px) saturate(164%);
+  -webkit-backdrop-filter: blur(15px) saturate(164%);
+  background-color: rgba(255, 255, 255, 0.34);
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.card .details .center h3 {
+  margin: 0;
+  padding: 0;
+  color: #ff3636;
+  line-height: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.card .details .center p {
+  margin: 10px 0;
+  padding: 0;
+  color: #828d9a;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media(max-width: 390px){
+  .card .details .center h3{
+    font-size: 1.09rem;
+  }
+}
+
+.effect{
+  transition: transform 0.5s;
+  margin: 0 0 10px 0;
+}
+
+.effect:hover{
+  transform: translateY(-10px);
+}
+
+.card .details .center a {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 5px;
+  color: #040404;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card .details .center a:hover {
+  background-color: #7de2d1;
+}
+
+.loc{
+  margin: 40px;
+  margin-top: 100px;
+  font-size: 30px;
+}
+
+.location{
+  margin-left: 150px;
+  border-radius: 20px;
+}
+
+footer{
+  background-color: black;
+  position: sticky;
+}
+
+.register{
+  margin: 40px;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register button{
+  height: 45px;
+  width: 80px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(228, 35, 206);
+  margin-left: 30px;
+  margin-top: 70px;
+}
+
+.connect{
+  margin-left: 400px;
+}
+
+.connect img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-top: 60px;
+  gap: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.connect img:hover{
+  width: 85px;
+  height: 85px;
+}
+
+.register h2{
+  margin-top: 70px;
+}
+
+.links a{
+  margin-left: 150px;
+  text-decoration: none;
+  color: white;
+}
+
+.special1{
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3,2fr);
+}
+
+.special1 a:hover{
+  transition: width 5s ease;
+  z-index: 1;
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-offset:initial;
+}
+
+.special1 h2{
+  margin-left: 150px;
+  margin-top: 50px;
+  font-size: 40px;
+  height: 30px;
+  width: 250px;
+}
+
+.special1 a{
+  margin-left: 150px;
+  text-decoration: none;
+  color: white;
+  width: 190px;
+}
+
+.copyright{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.copyright img{
+  height: 25px;
+  width: 25px;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.copyright h3{
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+.register button:hover{
+  background-color: rgb(147, 4, 130);
+  height:50px;
+  width: 90px;
+}
+</style>
 </head>
 <body>
         <div class="nav">
